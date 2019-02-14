@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Demo</title>
+        <link rel="stylesheet" href="/assets/semantic/semantic.min.css">
+    </head>
+    <body>
+        <% include ../partials/menu %>
+        <div class="ui container">
+            <% include ../partials/flash %>
+            <h1>Tasks list</h1>
+            <ul>
+                <% tasks.forEach(function(t){ %>
+                    <li><%= t.title %></li>
+                <% }); %>
+            </ul>
+            <h2>Add tasks</h2>
+            <form class="ui form" action="/" method="post">
+                <div class="field">
+                    <label for="task">Task name</label>
+                    <input type="text" name="task" id="task">
+                </div>
+                <button type="submit" class="ui labeled icon button green"><i class="add icon"></i> Add</button>
+            </form>
+        </div>
+        <% include ../partials/footer %>
+    </body>
+</html>
